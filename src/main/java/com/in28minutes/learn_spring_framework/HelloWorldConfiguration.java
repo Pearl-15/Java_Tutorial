@@ -31,9 +31,22 @@ public class HelloWorldConfiguration {
 	}
 	
 	@Bean
+	public Person person2MethodCall() {
+		return new Person(name(), age()); // reuse the existing bean which is name and age
+	}
+	
+	@Bean
+	public Person person3Parameters(String name, int age, Address address) { // inject Bean as a parameter
+		return new Person(name, age); 
+	}
+	
+	
+	@Bean
 	public Address address() {
 		var address = new Address("Woodleigh Street", "Singapore");
 		return address;
 	}
+	
+	
 	
 }
