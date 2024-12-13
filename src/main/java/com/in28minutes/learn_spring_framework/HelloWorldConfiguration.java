@@ -41,11 +41,19 @@ public class HelloWorldConfiguration {
 	}
 	
 	
-	@Bean
+//	@Bean
+//	public Address address() {
+//		var address = new Address("Woodleigh Street", "Singapore");
+//		return address;
+//	}
+	
+	// creating customename
+	@Bean(name="address2")
 	public Address address() {
-		var address = new Address("Woodleigh Street", "Singapore");
+		var address = new Address("Topayo Street", "Singapore");
 		return address;
 	}
+	
 	
 	
 	
