@@ -12,19 +12,16 @@ public class App03GamingSpringBeans {
 
 	public static void main(String[] args) {
 		
-		var context =new AnnotationConfigApplicationContext
-				(GammingConfiguration.class);
+		try(var context =new AnnotationConfigApplicationContext
+				(GammingConfiguration.class)) {
+			
+			context.getBean(GammingConsole.class).up();
+			
+			context.getBean(GameRunner.class).run();
+			
+			
+		}	
 		
-		context.getBean(GammingConsole.class).up();
-		
-//		// TODO Auto-generated method stub
-////		var game = new MarioGame();
-//		
-////		var game = new SuperContraGame();
-//		
-//		var game = new PacManGame();
-//		var gameRunner = new GameRunner(game);
-//		gameRunner.run();
 
 	}
 
